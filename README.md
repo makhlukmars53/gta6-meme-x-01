@@ -26,10 +26,9 @@ out from the public X account @nc33_riyan before the deadline, Monday
 23 November 2026, 21:00 WIB, and stays up with the account public until the
 results are out.
 
-Status: the post has not been made yet, so POST.json still holds the
-placeholder address. Once the post is up, replace the placeholder with the
-post's address, https://x.com/nc33_riyan/status/<id>, commit that one change,
-and submit that commit.
+Status: the post is live on X, and POST.json holds its live address. The
+entry points at that published post, and the post stays up with the account
+public until the results are out.
 
 ## Run it
 
@@ -38,7 +37,9 @@ mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
 main.ts copies POST.json from this repository to out/POST.json. That is all
-the program has to do: the house reads the post itself from X.
+the program has to do: the house reads the post itself from X. It first
+reads POST.json and refuses to copy it when the url inside is missing or
+not an X status link.
 
 ## License
 
